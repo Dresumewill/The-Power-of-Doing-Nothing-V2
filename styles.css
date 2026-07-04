@@ -147,6 +147,9 @@
   }
   .ticker-inner span::after { content: '◆'; margin-left: 2.5rem; }
   @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-inner { animation: none; }
+  }
 
   /* ── SECTION SHARED ── */
   section { padding: 6rem 3rem; }
@@ -402,4 +405,41 @@
     .signup-form { flex-direction: column; }
     .signup-form input { border-right: 1px solid rgba(200,151,42,0.4); border-bottom: none; }
     .stat-row { gap: 1.5rem; }
+  }
+
+  /* ── TABLET (≤ 600px) ── */
+  @media (max-width: 600px) {
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 1.8rem; }
+    .hero { padding: 5rem 1.25rem 2.5rem; }
+    .hero-buttons { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+    .btn-primary, .btn-secondary { text-align: center; }
+    .pillars-grid { gap: 1.25rem; }
+    .reviews-grid { gap: 1.25rem; }
+    .signup-form { gap: 0.75rem; }
+    .signup-form input, .signup-form button { width: 100%; }
+    footer { padding: 2.5rem 1.25rem; }
+  }
+
+  /* ── SMALL PHONES (≤ 400px) ── */
+  @media (max-width: 400px) {
+    nav { padding: 0.85rem 1rem; }
+    .nav-logo { font-size: 0.85rem; }
+    .nav-cta { font-size: 0.75rem; padding: 0.45rem 0.9rem; }
+    h1 { font-size: 2.2rem; }
+    .hero-eyebrow { font-size: 0.7rem; }
+    .stat-num { font-size: 2rem; }
+    .pillar { padding: 1.5rem; }
+    .review-card { padding: 1.5rem; }
+  }
+
+  /* ── ACCESSIBILITY ── */
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
   }
